@@ -7,14 +7,13 @@ public class Rq {
         this.cmd = cmd;
     }
 
-    public String getAction() {
-        if (cmd.equals("삭제?id=1")) {
-            return "삭제";
-        }
-        if (cmd.equals("수정?id=1")) {
-            return "수정";
-        }
-
-        return "";
+      public String getAction() {
+//        if (cmd.equals("삭제?id=1")) {
+//            return "삭제";
+//        }
+//        if (cmd.equals("수정?id=1")) {
+//            return "수정";
+//        }
+        return cmd.split("\\?")[0];
     }
 }
