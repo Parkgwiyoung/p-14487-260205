@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class AppTest {
 
-
     @Test
     @DisplayName("1 + 2 = 3")
     void t1() {
@@ -22,5 +21,13 @@ public class AppTest {
         int rst = app.plus(10, 20);
 
         assertThat(rst).isEqualTo(30);
+    }
+    @Test
+    @DisplayName("0 + 5 = 5")
+    void t3() {
+        App app = new App();
+        int rst = app.plus(0, 5);
+
+        assertThat(rst).isEqualTo(5);
     }
 }
