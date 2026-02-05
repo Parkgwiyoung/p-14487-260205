@@ -35,7 +35,7 @@ public class Rq {
 
     }
 
-    public int getParamAsInt(String key) {
+    public int getParamAsInt(String key, int defaultValue) {
         String rst = getParam(key);
         return Integer.parseInt(rst);
     }
