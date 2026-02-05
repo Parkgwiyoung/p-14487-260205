@@ -8,17 +8,10 @@ public class Rq {
 
     public String getActionName() {
 
-//        if (cmd.equals("삭제?id=1")) {
-//            return "삭제";
-//        }
-//        if (cmd.equals("수정?id=1")) {
-//            return "수정";
-//        }
-
         return cmd.split("\\?")[0];
     }
 
-    public String getParam(String key) {
+    public String getParam(String key, String defaultValue) {
 
         String params = cmd.split("\\?")[1];
 
@@ -31,15 +24,14 @@ public class Rq {
             }
         }
 
-            return "";
-
+        return defaultValue;
     }
 
     public int getParamAsInt(String key, int defaultValue) {
-        String rst = getParam(key);
-        try{
+        String rst = getParam(key, "");
+        try {
             return Integer.parseInt(rst);
-        } catch(NumberFormatException e){
+        } catch(NumberFormatException e) {
             return defaultValue;
         }
     }
