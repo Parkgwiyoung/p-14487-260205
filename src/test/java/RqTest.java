@@ -42,6 +42,7 @@ public class RqTest {
         String rst = rq.getParam("keywordType");
         assertThat(rst).isEqualTo("title");
     }
+
     @Test
     @DisplayName(value = "명령: 목록?keword=자바&keywordType=title 일때, rq.getParam(\"kewyordType\") -> \"title\"")
     void t5() {
@@ -50,6 +51,7 @@ public class RqTest {
         String rst = rq.getParam("keywordType");
         assertThat(rst).isEqualTo("title");
     }
+
     @Test
     @DisplayName(value = "목록?page=1일 때, rq.getParamAsInt(\"page\") -> 1")
     void t6() {
@@ -58,6 +60,7 @@ public class RqTest {
         int rst = rq.getParamAsInt("page");
         assertThat(rst).isEqualTo(1);
     }
+
     @Test
     @DisplayName(value = "목록?page=10일 때, rq.getParamAsInt(\"page\") -> 10")
     void t7() {
@@ -65,5 +68,14 @@ public class RqTest {
         Rq rq = new Rq("목록?page=10");
         int rst = rq.getParamAsInt("page");
         assertThat(rst).isEqualTo(10);
+    }
+
+    @Test
+    @DisplayName(value = "명령: 목록?keword=자바&keywordType=title&page=1 일때, rq.getParam(\"kewyordType\") -> \"title\"")
+    void t8() {
+
+        Rq rq = new Rq("목록?keword=자바&keywordType=title&page=1");
+        String rst = rq.getParam("keywordType");
+        assertThat(rst).isEqualTo("title");
     }
 }
