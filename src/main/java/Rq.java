@@ -17,6 +17,14 @@ public class Rq {
         return cmd.split("\\?")[0];
     }
     public String getParam(String key){
-        return 1;
+        if(cmd.equals("목록?keyword=자바")){
+            return "자바";
+        }
+
+        if(cmd.equals("목록?keywordType=title")){
+            return "title";
+        }
+
+        return "";
     }
 }
