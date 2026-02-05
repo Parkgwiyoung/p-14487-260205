@@ -87,4 +87,13 @@ public class RqTest {
         assertThat(rst).isEqualTo(-1);
 
     }
+    @Test
+    @DisplayName(value = "명령: 목록?keyword=문자 일때, rq.getParam(\"keywordType\", \"\") -> \"\"")
+    void t10() {
+
+        Rq rq = new Rq("목록?keyword=문자");
+        int rst = rq.getParam("keywordType", "");
+        assertThat(rst).isEqualTo("");
+
+    }
 }
